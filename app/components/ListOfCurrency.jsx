@@ -20,11 +20,13 @@ export default function ListOfCurrency({list, value, name}) {
     return <div key={arr[0]}> 
       <label 
         onClick={choose}
-        selected={arr[1].code === selected}
+        className={arr[1].code === selected ? styles.selected : null}
+        htmlFor={arr[0] + name}
       >{arr[1].name}</label>
 
       <input 
         value={arr[1].code}
+        id={arr[0] + name}
 
         // to assing name=from for selected input only
         name={arr[1].code === selected ? name : null}
@@ -36,10 +38,17 @@ export default function ListOfCurrency({list, value, name}) {
   return (
     <div className={styles.list}>
       {/* selected field */}
-      <p 
-        onClick={() => setOpen(!open)}
+      <div 
         className={styles.choosen}
-      >{selected}</p>
+        onClick={() => setOpen(!open)}
+      >
+        <p>{selected}</p>
+
+        <i 
+          className={`fa-solid fa-caret-down ${open ? "fa-rotate-180" : ""}`} 
+          style={{color: '#00494d'}}>
+        </i>
+      </div>
 
       {/* rest of options */}
       <ul className={`${styles.listUl} ${open ? styles.listOpen : ""}`}>

@@ -1,5 +1,5 @@
 import './globals.css'
-
+import Script from 'next/script'
 
 export const metadata = {
   title: 'Create Next App',
@@ -12,6 +12,13 @@ export default function RootLayout({ children }) {
       <body>
         {children}
       </body>
+
+      {/* Font aswesome */}
+      <Script
+        src='https://kit.fontawesome.com/3fab2f990f.js'
+        crossOrigin='anonymous'
+        strategy='lazyOnload'
+      />
     </html>
   )
 }

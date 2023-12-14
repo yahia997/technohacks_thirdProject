@@ -2,6 +2,8 @@ import styles from "../page.module.css";
 import { convert, getAllCurrencies } from "../utils/convert";
 import ListOfCurrency from "./ListOfCurrency";
 
+import { cookies } from 'next/headers'
+
 
 export default async function Edit() {
   // List of currencies
@@ -25,7 +27,8 @@ export default async function Edit() {
         rawFormData.amount
       );
 
-      console.log(`${rawFormData.amount}${rawFormData.from} = ${c}${rawFormData.to}`);
+      // update the cookies
+      cookies().set("result", `${rawFormData.amount} ${rawFormData.from} = ${c} ${rawFormData.to}`);
     }
 
   }

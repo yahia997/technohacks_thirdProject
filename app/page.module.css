@@ -1,28 +1,74 @@
 /* special list */
 .list {
-
+  font-size: 0.8rem;
+  width: 150px;
+  background-color: var(--light-grayish-cyan);
+  border-radius: 8px;
+  box-shadow: 0px 3px 15px 0 hsla(183, 100%, 8%, 0.502);
 }
 
 .listUl {
-  height: 0;
+  position: absolute;
+  z-index: 500;
+  width: inherit;
+  background-color: inherit;
+  border-radius: inherit;
+  margin-top: 10px;
   overflow: hidden;
-  display: flex;
+  box-shadow: inherit;
+  display: none;
   flex-direction: column;
+  padding: 10px;
 }
 
 .listUl label {
-  background-color: green;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  display: block;
+  cursor: pointer;
+  padding: 5px 10px;
+  transition: all 0.2s ease;
+  color: var(--dark-grayish-cyan);
+  border-radius: 6px;
+}
+
+.listUl label:hover,
+.selected {
+  background-color: var(--strong-cyan) !important;
+  color: var(--very-dark-cyan) !important;
+}
+
+.listUl div {
+  cursor: pointer;
 }
 
 .listOpen {
-  transition: all 0.3s ease;
-  height: auto;
+  display: flex;
 }
 
 .choosen {
-  background-color: red;
+  background-color: var(--light-grayish-cyan);
+  cursor: pointer;
+  border-radius: 8px;
+  padding: 5px 10px;
+  color: var(--dark-grayish-cyan);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .list input {
   display: none;
+}
+
+
+
+/* Result section */
+.result {
+  background-color: var(--very-dark-cyan);
+  color: var(--strong-cyan);
+  border-radius: 9px;
+  padding: 25px;
+  font-size: 1.2rem;
 }
