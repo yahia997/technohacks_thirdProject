@@ -9,8 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@everapi/currencyapi-js": "^1.0.6",
+    "@everapi/freecurrencyapi-js": "^1.0.1",
+    "next": "14.0.4",
     "react": "^18",
-    "react-dom": "^18",
-    "next": "14.0.4"
+    "react-dom": "^18"
   }
 }
