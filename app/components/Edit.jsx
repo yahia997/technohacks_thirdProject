@@ -34,32 +34,41 @@ export default async function Edit() {
   }
 
   return (
-    <form action={handleSubmit}>
-      {/* Amount to be coverted */}
+    <form action={handleSubmit} className={styles.form}>
       <div>
-        <label htmlFor="amount">Amount</label>
-        <input
-          type="text"
-          name="amount"
-          id="amount"
-        />
-      </div>
+        {/* Amount to be coverted */}
+        <div className={styles.amount}>
+          <label htmlFor="amount">Amount</label>
+          <input
+            type="text"
+            name="amount"
+            id="amount"
+            autoComplete="off"
+          />
+        </div>
 
-      {/* Types of currencies */}
-      <div>
-        {/* From */}
-        <ListOfCurrency 
-          list={list}
-          name="from"
-          value="USD"
-        />
+        {/* Types of currencies */}
+        <div className={styles.fromTo}>
+          {/* From */}
+          <div>
+            <label htmlFor="from">Form</label>
+            <ListOfCurrency 
+              list={list}
+              name="from"
+              value="USD"
+              />
+          </div>
 
-        {/* To */}
-        <ListOfCurrency 
-          list={list}
-          name="to"
-          value="EUR"
-        />
+          {/* To */}
+          <div>
+          <label htmlFor="to">To</label>
+            <ListOfCurrency 
+              list={list}
+              name="to"
+              value="EUR"
+            />
+          </div>
+        </div>
       </div>
 
       <button type="submit">Convert</button>

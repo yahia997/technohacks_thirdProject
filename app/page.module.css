@@ -1,12 +1,11 @@
 /* special list */
 .list {
-  font-size: 0.8rem;
-  width: 150px;
+  font-size: 1rem;
+  width: 175px;
   background-color: var(--light-grayish-cyan);
   border-radius: 8px;
   box-shadow: 0px 3px 15px 0 hsla(183, 100%, 8%, 0.502);
 }
-
 .listUl {
   position: absolute;
   z-index: 500;
@@ -20,7 +19,6 @@
   flex-direction: column;
   padding: 10px;
 }
-
 .listUl label {
   text-overflow: ellipsis;
   overflow: hidden;
@@ -32,21 +30,17 @@
   color: var(--dark-grayish-cyan);
   border-radius: 6px;
 }
-
 .listUl label:hover,
 .selected {
   background-color: var(--strong-cyan) !important;
   color: var(--very-dark-cyan) !important;
 }
-
 .listUl div {
   cursor: pointer;
 }
-
 .listOpen {
   display: flex;
 }
-
 .choosen {
   background-color: var(--light-grayish-cyan);
   cursor: pointer;
@@ -57,11 +51,46 @@
   justify-content: space-between;
   align-items: center;
 }
-
 .list input {
   display: none;
 }
+@media (max-width: 700px) {
+  .list {
+    width: 125px;
+  }
+}
 
+/* Form (amount-from-to) */
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.amount {
+  display: flex;
+  flex-direction: column;
+}
+.amount input {
+  color: var(--very-dark-cyan);
+  background-color: var(--light-grayish-cyan);
+  border: none;
+  outline: none;
+  border-radius: 6px;
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+  padding: 5px 15px;
+}
+.amount label,
+.fromTo label {
+  color: var(--very-dark-cyan);
+  margin-bottom: 6px;
+  display: block;
+}
+.fromTo {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
 
 
 /* Result section */
@@ -71,4 +100,7 @@
   border-radius: 9px;
   padding: 25px;
   font-size: 1.2rem;
+}
+.result p {
+  word-break: break-all;
 }
