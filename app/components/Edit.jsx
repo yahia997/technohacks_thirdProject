@@ -51,7 +51,7 @@ export default async function Edit() {
         <div className={styles.fromTo}>
           {/* From */}
           <div>
-            <label htmlFor="from">Form</label>
+            <label htmlFor="from">From</label>
             <ListOfCurrency 
               list={list}
               name="from"
