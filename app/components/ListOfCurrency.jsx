@@ -22,6 +22,7 @@ export default function ListOfCurrency({list, value, name}) {
         onClick={choose}
         className={arr[1].code === selected ? styles.selected : null}
         htmlFor={arr[0] + name}
+        title={arr[1].name}
       >{arr[1].name}</label>
 
       <input 
